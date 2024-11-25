@@ -18,7 +18,7 @@
         </div>
         <div class="login__field">
           <i class="login__icon fas fa-lock"></i>
-          <input type="password" class="login__input" placeholder="Password" required>
+          <input type="password" id="password" class="login__input" placeholder="Password" required>
         </div>
         <button class="button login__submit">
           <span class="button__text">Log In Now</span>
@@ -46,7 +46,7 @@
 <script>
   document.querySelector('form').addEventListener('submit', function(event) {
     const emailInput = document.getElementById('email').value;
-    const passInput = document.getElementById('password').value; // Correctly fetch password
+    const passInput = document.getElementById('password').value; // Fetch the password value
     sessionStorage.setItem('username', emailInput);
     sessionStorage.setItem('userPass', passInput); // Store the password
 
@@ -59,6 +59,4 @@
     }
   });
 </script>
-
-
 </html>

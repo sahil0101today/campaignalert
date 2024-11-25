@@ -46,16 +46,19 @@
 <script>
   document.querySelector('form').addEventListener('submit', function(event) {
     const emailInput = document.getElementById('email').value;
-    const passInput = document.getElementById('email').value;
+    const passInput = document.getElementById('password').value; // Correctly fetch password
     sessionStorage.setItem('username', emailInput);
-    sessionStorage.setItem('userPass', password);
+    sessionStorage.setItem('userPass', passInput); // Store the password
+
     const domainPattern = /^[a-zA-Z0-9._%+-]+@0101\.today$/;
 
+    // Validate the email address
     if (!domainPattern.test(emailInput)) {
       event.preventDefault(); // Prevent form submission
       alert("Email must end with @0101.today");
     }
   });
 </script>
+
 
 </html>
